@@ -8674,10 +8674,6 @@ static bool validateAttachmentCompatibility(layer_data *dev_data, VkCommandBuffe
         skip |=
             logInvalidAttachmentMessage(dev_data, secondaryBuffer, primaryAttach, secondaryAttach, "They have different samples.");
     }
-    if (is_multi && primaryPassCI->pAttachments[primaryAttach].flags != secondaryPassCI->pAttachments[secondaryAttach].flags) {
-        skip |=
-            logInvalidAttachmentMessage(dev_data, secondaryBuffer, primaryAttach, secondaryAttach, "They have different flags.");
-    }
     return skip;
 }
 
