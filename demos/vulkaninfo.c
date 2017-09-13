@@ -930,7 +930,7 @@ static void AppCreateXcbWindow(struct AppInstance *inst) {
     inst->xcb_connection = xcb_connect(NULL, &scr);
     int conn_error = xcb_connection_has_error(inst->xcb_connection);
     if (conn_error) {
-        fprintf(stderr, "XCB failed to connect to the X server due to error:%d.\n", conn_error);
+        fprintf(stderr, "XCB failed to connect to the X server due to error:%d.\nExiting ...\n", conn_error);
         fflush(stderr);
         exit(1);
     }
